@@ -103,6 +103,10 @@ int main(int argc, char *argv[])
 		}
 		outFile << answer << endl;
 	}
+	else
+	{
+		outFile << table[p][q].len << endl;
+	}
 	
 	return 0;
 }
