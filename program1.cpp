@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <time.h>
 
 using namespace std;
 
@@ -14,6 +15,10 @@ typedef struct boxy box;
 
 int main(int argc, char *argv[])
 {
+	time_t start, end;
+	time(&start);
+	ios_base::sync_with_stdio(false);
+
 	ifstream fileX(argv[1]);
 	ifstream fileY(argv[2]);
 
@@ -107,6 +112,9 @@ int main(int argc, char *argv[])
 	{
 		outFile << table[p][q].len << endl;
 	}
+	time(&end);
+	double timeTaken = double(end-start);
+	outFile << fixed << timeTaken << " seconds" << endl;
 	
 	return 0;
 }
