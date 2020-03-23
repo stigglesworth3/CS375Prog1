@@ -24,6 +24,7 @@ typedef struct boxy box;
 //then it works from the bottom rightmost location in the matrix based on the arrow direction to work finding the LCS and length of the substring until it reaches either row 0 or col 0
 int main(int argc, char *argv[])
 {
+	//the time that the program starts running
 	auto start = high_resolution_clock::now();
 
 	ifstream fileX(argv[1]);
@@ -119,7 +120,10 @@ int main(int argc, char *argv[])
 	{
 		outFile << table[p][q].len << endl;
 	}
+
+	//the time that the program stops running
 	auto stop = high_resolution_clock::now();
+	//the difference between the starting time and ending time in microseconds
 	auto duration = duration_cast<microseconds>(stop-start);
 	outFile << duration.count() << " microseconds" << endl;
 	
