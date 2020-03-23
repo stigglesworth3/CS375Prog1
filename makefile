@@ -19,5 +19,9 @@ clean:
 run: all
 	./$(PROG1) filex.txt filey.txt output1.txt
 	./$(PROG2) filex.txt filey.txt output2.txt
+run1: $(PROG1)
+	./$(PROG1) filex.txt filey.txt output1.txt
+run2: $(PROG2)
+	./$(PROG2) filex.txt filey.txt output2.txt
 memcheck: all
 	valgrind -v --leak-check=full ./$(PROG1)
