@@ -1,9 +1,14 @@
+//this class runs the first case of programming assingment 1 (bottom up dynamic programming approach)
+//this class contains a main function and a struct called "boxy"
+
+
 #include <iostream>
 #include <string>
 #include <fstream>
-//#include <iomanip>
+#include <chrono>
 
 using namespace std;
+using namespace std::chrono;
 
 struct boxy //one spot in the matrix so both the length of the common substring and arrow direction can be stored together
 {
@@ -19,9 +24,7 @@ typedef struct boxy box;
 //then it works from the bottom rightmost location in the matrix based on the arrow direction to work finding the LCS and length of the substring until it reaches either row 0 or col 0
 int main(int argc, char *argv[])
 {
-	time_t start, end; // beginning and ending for timing
-	time(&start);
-	ios_base::sync_with_stdio(false);
+	auto start = high_resolution_clock::now();
 
 	ifstream fileX(argv[1]);
 	ifstream fileY(argv[2]);
@@ -116,9 +119,9 @@ int main(int argc, char *argv[])
 	{
 		outFile << table[p][q].len << endl;
 	}
-	time(&end);
-	double timeTaken = double(end-start);
-	outFile << fixed << timeTaken << " seconds" << endl;
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop-start);
+	outFile << duration.count() << " microseconds" << endl;
 	
 	outFile.close();
 
