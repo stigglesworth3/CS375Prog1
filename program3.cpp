@@ -10,7 +10,7 @@
 using namespace std;
 using namespace std::chrono;
 
-const int largeNum = 100; //used to pass the table to functions
+const int largeNum = 1000; //used to pass the table to functions
 
 //calculates the length of the LCS using a top down recursive approach with memoization
 //X is one of the input strings and Y is the other
