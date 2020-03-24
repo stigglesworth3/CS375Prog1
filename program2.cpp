@@ -1,3 +1,6 @@
+//this file run the second case of programming assignment 1 (top down without memoization)
+//this file contains the main funciton that starts the excution and a recursive funciton called LCS that does the real work of calculating the length of the LCS
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -6,6 +9,10 @@
 using namespace std;
 using namespace std::chrono;
 
+//calculates the length of the longest substring using a top down recusive approach 
+//X is one input string and Y is the other
+//0 < p < length of X -> -1 triggers base case
+//0 < q < length of Y -> -1 triggers base case
 int LCS(string X, string Y, int p, int q)
 {
 	if (p < 0 || q < 0)
@@ -22,7 +29,8 @@ int LCS(string X, string Y, int p, int q)
 	}
 }
 
-
+//main function that controls input/output as well as starts the recursive function and times the total running time
+//argv holds the name of the input/output files in spots 1-3
 int main(int argc, char *argv[])
 {
 	//the time when the program begins
