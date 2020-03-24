@@ -1,5 +1,5 @@
-//this files runs the first case of programming assingment 1 (bottom up dynamic programming approach)
-//this files contains a main function and a struct called "boxy"
+//this file runs the first case of programming assingment 1 (bottom up dynamic programming approach)
+//this file contains a main function and a struct called "boxy"
 
 
 #include <iostream>

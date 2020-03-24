@@ -3,7 +3,7 @@ PROG2 = program2
 PROG3 = program3
 FLAGS = -Wall -Wextra -DDEBUG -g -std=c++14
 
-all: $(PROG1) $(PROG2)
+all: $(PROG1) $(PROG2) $(PROG3)
 $(PROG1): $(PROG1).o
 	g++ $(FLAGS) $(PROG1).o -o $(PROG1)
 $(PROG2): $(PROG2).o
